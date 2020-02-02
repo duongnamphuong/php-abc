@@ -11,3 +11,56 @@ Run PHP with XAMPP:
 * Open __xampp-control.exe__
 * Start __Apache__ server. If it failed in starting, please check current opening websites in IIS (Internet Information Services) and turn of the ones that use any of the ports used by Apache.
 * Use web browser and access __localhost/...__ ([...] is replaced by the directory to your PHP file.)
+
+My environment:
+
+* Windows 10
+* Visual Studio Code 1.41.1
+* XAMPP v3.2.4
+
+How to debug with Xdebug on Visual Studio Code:
+
+* Download Xdebug binary file from [https://xdebug.org/download](https://xdebug.org/download) (choose a file that matches the PHP version used by XAMPP; make sure your computer has corresponding C++ installed)
+* Place that binary in __...\xampp\php\ext__ (xampp is the folder where XAMPP is installed)
+* Open __xampp-control.exe__, click __Config__ button, select __php.ini__. Place settings below at the end of the file. You have to change some "dir" parameters value to match your environment. Please note that in this example, I have XAMPP installed in __E:\php\xampp__ directory.
+
+>[XDebug]
+
+>;zend_extension points to the Xdebug binary file you downloaded.
+
+>zend_extension="E:\php\xampp\php\ext\php_xdebug-2.9.2-7.4-vc15-x86_64.dll"
+
+>xdebug.stopOnEntry = true
+
+>xdebug.profiler_enable = off
+
+>xdebug.profiler_enable_trigger = Off
+
+>xdebug.profiler_output_name = cachegrind.out.%t.%p
+
+>xdebug.profiler_output_dir ="E:\php\xampp\tmp"
+
+>xdebug.show_local_vars=0
+
+>xdebug.remote_enable = 1
+
+>xdebug.remote_autostart = 1
+
+>xdebug.remote_handler = "dbgp"
+
+>xdebug.remote_host = "127.0.0.1"
+
+>xdebug.remote_log = "E:\php\xampp\tmp\xdebug.txt"
+
+>xdebug.remote_port = 9000
+
+>xdebug.trace_output_dir = "E:\php\xampp\tmp"
+
+>xdebug.remote_cookie_expire_time = 36000
+
+* On Visual Studio Code, open __Extensions__ (Ctrl+Shift+X), and type "PHP Debug" to search for that extension and install it.
+* After installing, you can create debug breakpoints on any .PHP file you want to debug.
+* Click __Debug -> Start Debugging__ menu.
+* Start Apache web server with XAMPP controller.
+* Use web browser and browse for __http://localhost/dashboard/phpinfo.php__ to confirm your settings of Xdebug. Just Ctrl+F "Xdebug" appearing in the site.
+* Browse the PHP where you place breakpoints. Check if the breakpoint is hit in Visual Studio Code.  
