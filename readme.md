@@ -1,10 +1,27 @@
-This repository records self-study lessons of a PHP amateur.
+### This repository records self-study lessons of a PHP amateur.
 
 * lesson-001-hello-world: "hello world" example from [Tutorialspoint](https://www.tutorialspoint.com/php/php_introduction.htm)
 * lesson-002-post-request: handling of form registration using POST method, example from [guru99.com](https://www.guru99.com/php-forms-handling.html)
-* lesson-003-mysql: test a connection to MySQL. Before that, I used the GUI of MySQL Workbench to create a new user and set __Authentication Type: Standard__   
+* lesson-003-mysql: test a connection to MySQL. Before that, I used the GUI of MySQL Workbench to create a new user and set __Authentication Type: Standard__
+* lesson-004-swiftmailer: send email with Swift Mailer library (refer to beneath instruction for how to install the library).
 
-Run PHP with XAMPP:
+## Package management
+
+* I use __Composer__ to manage PHP libraries. Download from [https://getcomposer.org/](https://getcomposer.org/).
+* For example, I used composer to install __Swift Mailer__ ([https://swiftmailer.symfony.com/](https://swiftmailer.symfony.com/)) with this command (on CMD, of course you must set composer's directory in __Path__ environment parameter):
+
+```
+composer require "swiftmailer/swiftmailer:^6.0"
+```
+
+* Downloaded libraries are stored in __%userprofile%\vendor__ (%userprofile% stands for __C:\Users\[your user]__)
+* How to use those libraries: write this in your PHP files:
+
+```
+<?php require_once 'C:/Users/[your user]/vendor/autoload.php'; ?>
+```      
+
+## Run PHP with XAMPP:
 
 * Download XAMPP from [this page](https://www.apachefriends.org/index.html). Install it.
 * Copy your PHP files to __htdocs__ folder in XAMPP installation folder.
@@ -12,13 +29,13 @@ Run PHP with XAMPP:
 * Start __Apache__ server. If it failed in starting, please check current opening websites in IIS (Internet Information Services) and turn of the ones that use any of the ports used by Apache.
 * Use web browser and access __localhost/...__ ([...] is replaced by the directory to your PHP file.)
 
-My environment:
+## My environment:
 
 * Windows 10
 * Visual Studio Code 1.41.1
 * XAMPP v3.2.4
 
-How to debug with Xdebug on Visual Studio Code:
+## How to debug with Xdebug on Visual Studio Code:
 
 * Download Xdebug binary file from [https://xdebug.org/download](https://xdebug.org/download) (choose a file that matches the PHP version used by XAMPP; make sure your computer has corresponding C++ installed)
 * Place that binary in __...\xampp\php\ext__ (xampp is the folder where XAMPP is installed)
