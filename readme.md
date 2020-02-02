@@ -59,7 +59,8 @@ How to debug with Xdebug on Visual Studio Code:
 >xdebug.remote_cookie_expire_time = 36000
 
 * On Visual Studio Code, open __Extensions__ (Ctrl+Shift+X), and type "PHP Debug" to search for that extension and install it.
-* After installing, you can create debug breakpoints on any .PHP file you want to debug.
+* In order to activate debugger, you have to use Visual Studio Code to open a folder, rather than a file. Please open the folder containing the file you want to debug, then open that file, and create debug breakpoint on it.
+* Visual Studio Code needs a __launch.json__ file locating in the opened folder before debugging. You can create one by using __Debug and Run__ (Ctrl+Shift+D) in Visual Studio Code and following its instruction. In this case, just click on __create a launch.json file__ option, then select the environment of "PHP Debug" extensions (which you named upon installing "PHP Debug"), which is "PHP" in my case.  
 * Click __Debug -> Start Debugging__ menu.
 * Start Apache web server with XAMPP controller.
 * Use web browser and browse for __http://localhost/dashboard/phpinfo.php__ to confirm your settings of Xdebug. Just Ctrl+F "Xdebug" appearing in the site.
