@@ -1,6 +1,7 @@
 This repository records self-study lessons of a PHP amateur.
 
 * lesson-001-hello-world: "hello world" example from [Tutorialspoint](https://www.tutorialspoint.com/php/php_introduction.htm)
+* lesson-002-post-request: handling of form registration using POST method, example from [guru99.com](https://www.guru99.com/php-forms-handling.html) 
 
 Run PHP with XAMPP:
 
