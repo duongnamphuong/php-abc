@@ -1,7 +1,8 @@
 This repository records self-study lessons of a PHP amateur.
 
 * lesson-001-hello-world: "hello world" example from [Tutorialspoint](https://www.tutorialspoint.com/php/php_introduction.htm)
-* lesson-002-post-request: handling of form registration using POST method, example from [guru99.com](https://www.guru99.com/php-forms-handling.html) 
+* lesson-002-post-request: handling of form registration using POST method, example from [guru99.com](https://www.guru99.com/php-forms-handling.html)
+* lesson-003-mysql: test a connection to MySQL. Before that, I used the GUI of MySQL Workbench to create a new user and set __Authentication Type: Standard__   
 
 Run PHP with XAMPP:
 
