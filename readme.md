@@ -4,6 +4,7 @@
 * lesson-002-post-request: handling of form registration using POST method, example from [guru99.com](https://www.guru99.com/php-forms-handling.html)
 * lesson-003-mysql: test a connection to MySQL. Before that, I used the GUI of MySQL Workbench to create a new user and set __Authentication Type: Standard__
 * lesson-004-swiftmailer: send email with Swift Mailer library (refer to beneath instruction for how to install the library).
+* lesson-005-sqlsrv: test a connection to SQL Server.
 
 ## Package management
 
@@ -21,6 +22,10 @@ composer require "swiftmailer/swiftmailer:^6.0"
 <?php require_once 'C:/Users/[your user]/vendor/autoload.php'; ?>
 ```      
 
+## Run PHP with Command Prompt
+* Add the directory that contains __php.exe__ into __Path__ environment parameter.
+* Ctrl+R (Run) "CMD", and run this command: __php your_file.php__.
+
 ## Run PHP with XAMPP:
 
 * Download XAMPP from [this page](https://www.apachefriends.org/index.html). Install it.
@@ -35,7 +40,7 @@ composer require "swiftmailer/swiftmailer:^6.0"
 * Visual Studio Code 1.41.1
 * XAMPP v3.2.4
 
-## How to debug with Xdebug on Visual Studio Code:
+## Debug with Xdebug on Visual Studio Code (running PHP files on XAMPP's server):
 
 * Download Xdebug binary file from [https://xdebug.org/download](https://xdebug.org/download) (choose a file that matches the PHP version used by XAMPP; make sure your computer has corresponding C++ installed)
 * Place that binary in __...\xampp\php\ext__ (xampp is the folder where XAMPP is installed)
@@ -82,3 +87,7 @@ composer require "swiftmailer/swiftmailer:^6.0"
 * Start Apache web server with XAMPP controller.
 * Use web browser and browse for __http://localhost/dashboard/phpinfo.php__ to confirm your settings of Xdebug. Just Ctrl+F "Xdebug" appearing in the site.
 * Browse the PHP where you place breakpoints. Check if the breakpoint is hit in Visual Studio Code.  
+
+## Debug with Xdebug on Visual Studio Code (running PHP files with Command Prompt)
+
+The method is similar to the case of using XAMPP. You have to paste your files to __ext__ folder of your installed PHP, instead of the __ext__ folder at your XAMPP's place. The __php.ini__ file used in this case, of course, belongs to your installed PHP, not XAMPP. Besides, please change some values in your configuration which would be pasted in __php.ini__ so that it would make sense.
