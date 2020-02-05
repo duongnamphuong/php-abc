@@ -7,10 +7,7 @@
 </head>
 <body>
     <?php
-        // Prerequisite: Install Swift Mailer: https://swiftmailer.symfony.com/docs/introduction.html
-
-        // Follow prerequisite above before running this code:
-        require_once 'C:/Users/[your user]/vendor/autoload.php'; // [your user] differs depending on cases.
+        require_once '../vendor/autoload.php';
 
         // Create the Transport (Gmail use SMTP server smtp.gmail.com, port 465, and SSL)
         $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))

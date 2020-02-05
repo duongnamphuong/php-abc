@@ -1,26 +1,18 @@
-### This repository records self-study lessons of a PHP amateur.
+# This repository records self-study lessons of a PHP amateur.
 
 * lesson-001-hello-world: "hello world" example from [Tutorialspoint](https://www.tutorialspoint.com/php/php_introduction.htm)
 * lesson-002-post-request: handling of form registration using POST method, example from [guru99.com](https://www.guru99.com/php-forms-handling.html)
 * lesson-003-mysql: test a connection to MySQL. Before that, I used the GUI of MySQL Workbench to create a new user and set __Authentication Type: Standard__
-* lesson-004-swiftmailer: send email with Swift Mailer library (refer to beneath instruction for how to install the library).
+* lesson-004-swiftmailer: send email with SwiftMailer.
 * lesson-005-sqlsrv: test a connection to SQL Server.
 
-## Package management
+## Composer - Dependency management tool for PHP projects.
 
-* I use __Composer__ to manage PHP libraries. Download from [https://getcomposer.org/](https://getcomposer.org/).
-* For example, I used composer to install __Swift Mailer__ ([https://swiftmailer.symfony.com/](https://swiftmailer.symfony.com/)) with this command (on CMD, of course you must set composer's directory in __Path__ environment parameter):
-
-```
-composer require "swiftmailer/swiftmailer:^6.0"
-```
-
-* Downloaded libraries are stored in __%userprofile%\vendor__ (%userprofile% stands for __C:\Users\[your user]__)
-* How to use those libraries: write this in your PHP files:
-
-```
-<?php require_once 'C:/Users/[your user]/vendor/autoload.php'; ?>
-```      
+* Download from [https://getcomposer.org/](https://getcomposer.org/), install it and setup environment variable __Path__.
+* How to initialize a __composer.json__: CMD to your repo/project root folder. Run command __composer init__, press Enter and follow instructions in the console after that. During this you will instruct the console what __vendor__, __project name__ and which __version__ (from __Github__) on which your project depends.
+* After creating __composer.json__ successfully. You can run command __composer update__. As the result, composer will create a __vendor__ folder (same place as __composer.json__), then downloads necessary libraries described in the JSON and places them in it, then create a __composer.lock__ file.
+* You should add __/vendor/__ into __.gitignore__ file, but __composer.lock__ file shouldn't be ignored. Please Google to know why.
+* PHP code that would use any of depended libraries, must have this code:  ```<?php require_once 'vendor/autoload.php'; ?>```      
 
 ## Run PHP with Command Prompt
 * Add the directory that contains __php.exe__ into __Path__ environment parameter.

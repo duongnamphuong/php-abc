@@ -1,0 +1,8 @@
+{
+    "name": "duongnamphuong/php-abc",
+    "description": "Repo of a PHP newbie",
+    "require": {
+        "swiftmailer/swiftmailer": "^6.2"
+    },
+    "minimum-stability": "beta"
+}
