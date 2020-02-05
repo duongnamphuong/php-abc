@@ -1,0 +1,2 @@
+* Normally, your __ext__ folder should have got __php_mysqli.dll__ after extracting PHP archived packet.
+* Before playing this code, you have to confirm that __extension=mysqli__ setting exists in __php.ini__ file.
