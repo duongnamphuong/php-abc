@@ -1,4 +1,4 @@
-# This repository records self-study lessons of a PHP amateur.
+﻿# This repository records self-study lessons of a PHP amateur.
 
 * lesson-001-hello-world: "hello world" example from [Tutorialspoint](https://www.tutorialspoint.com/php/php_introduction.htm)
 * lesson-002-post-request: handling of form registration using POST method, example from [guru99.com](https://www.guru99.com/php-forms-handling.html)
@@ -38,39 +38,25 @@
 * Place that binary in __...\xampp\php\ext__ (xampp is the folder where XAMPP is installed)
 * Open __xampp-control.exe__, click __Config__ button, select __php.ini__. Place settings below at the end of the file. You have to change some "dir" parameters value to match your environment. Please note that in this example, I have XAMPP installed in __E:\php\xampp__ directory.
 
->[XDebug]
-
->;zend_extension points to the Xdebug binary file you downloaded.
-
->zend_extension="E:\php\xampp\php\ext\php_xdebug-2.9.2-7.4-vc15-x86_64.dll"
-
->xdebug.stopOnEntry = true
-
->xdebug.profiler_enable = off
-
->xdebug.profiler_enable_trigger = Off
-
->xdebug.profiler_output_name = cachegrind.out.%t.%p
-
->xdebug.profiler_output_dir ="E:\php\xampp\tmp"
-
->xdebug.show_local_vars=0
-
->xdebug.remote_enable = 1
-
->xdebug.remote_autostart = 1
-
->xdebug.remote_handler = "dbgp"
-
->xdebug.remote_host = "127.0.0.1"
-
->xdebug.remote_log = "E:\php\xampp\tmp\xdebug.txt"
-
->xdebug.remote_port = 9000
-
->xdebug.trace_output_dir = "E:\php\xampp\tmp"
-
->xdebug.remote_cookie_expire_time = 36000
+```ini
+[XDebug]
+;zend_extension points to the Xdebug binary file you downloaded.
+zend_extension="E:\php\xampp\php\ext\php_xdebug-2.9.2-7.4-vc15-x86_64.dll"
+xdebug.stopOnEntry = true
+xdebug.profiler_enable = off
+xdebug.profiler_enable_trigger = Off
+xdebug.profiler_output_name = cachegrind.out.%t.%p
+xdebug.profiler_output_dir ="E:\php\xampp\tmp"
+xdebug.show_local_vars=0
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
+xdebug.remote_handler = "dbgp"
+xdebug.remote_host = "127.0.0.1"
+xdebug.remote_log = "E:\php\xampp\tmp\xdebug.txt"
+xdebug.remote_port = 9000
+xdebug.trace_output_dir = "E:\php\xampp\tmp"
+xdebug.remote_cookie_expire_time = 36000
+```
 
 * On Visual Studio Code, open __Extensions__ (Ctrl+Shift+X), and type "PHP Debug" to search for that extension and install it.
 * In order to activate debugger, you have to use Visual Studio Code to open a folder, rather than a file. Please open the folder containing the file you want to debug, then open that file, and create debug breakpoint on it.
@@ -83,3 +69,4 @@
 ## Debug with Xdebug on Visual Studio Code (running PHP files with Command Prompt)
 
 The method is similar to the case of using XAMPP. You have to paste your files to __ext__ folder of your installed PHP, instead of the __ext__ folder at your XAMPP's place. The __php.ini__ file used in this case, of course, belongs to your installed PHP, not XAMPP. Besides, please change some values in your configuration which would be pasted in __php.ini__ so that it would make sense.
+
